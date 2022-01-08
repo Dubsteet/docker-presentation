@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    volumes:
+      - "mc:/data"
+    environment:
+      EULA: "TRUE"
+      VERSION: 1.18.1
+      TYPE: "PAPER"
+      MAX_PLAYERS: 30
+    restart: unless-stopped
+volumes:
+  mc:
